@@ -1,0 +1,17 @@
+2023/05/22 12:52:12 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2023/05/22 12:52:12 Node n0 initialized
+2023/05/22 12:52:12 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2023/05/22 12:52:12 Received {c1 n0 {"type":"topology","topology":{"n0":[]},"msg_id":1}}
+2023/05/22 12:52:12 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"type":"topology_ok"}}
+2023/05/22 12:52:12 Received {c2 n0 {"type":"broadcast","message":0,"msg_id":1}}
+panic: interface conversion: interface {} is float64, not int
+
+goroutine 18 [running]:
+main.(*server).broadcastHandler(0xc00002c1e0, {{0xc000184058, 0x2}, {0xc00018405a, 0x2}, {0xc000196000, 0x2b, 0x30}})
+	/Users/mmt9157/Desktop/gossip-glomers/maelstrom-broadcast-3a/main.go:42 +0x25a
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc000184058, 0x2}, {0xc00018405a, 0x2}, {0xc000196000, 0x2b, 0x30}})
+	/Users/mmt9157/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20230516124010-52951329816e/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/mmt9157/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20230516124010-52951329816e/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/mmt9157/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20230516124010-52951329816e/node.go:127 +0x44a
